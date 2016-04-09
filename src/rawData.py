@@ -1,4 +1,5 @@
 import json
+import subprocess
 
 def delete_keys_for_dic(dic, keys):
 	for key in keys:
@@ -39,5 +40,6 @@ def join(infname1, infname2, oufname, join_key, new_key):
 	ouf.close()
 
 if __name__ == "__main__":
-	#delete_keys_for_json_file("../data/yelp_academic_dataset_user.json", "../data/user_clean.json", ["friends"])
+	subprocess.call(["grep", "2015-", "../data/yelp_academic_dataset_review.json", ">", "../data/review_2015.json"])
+	delete_keys_for_json_file("../data/yelp_academic_dataset_user.json", "../data/user_clean.json", ["friends"])
 	join("../data/review_2015.json", "../data/user_clean.json", "../data/review_user.json", "user_id", "user")

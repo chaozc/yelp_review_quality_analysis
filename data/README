@@ -1,0 +1,2 @@
+put yelp_academic_dataset_review.json and yelp_academic_dataset_user.json here
+under src/, run raw_data.py, you will get the filtered data in review_user.json
