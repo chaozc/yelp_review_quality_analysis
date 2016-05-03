@@ -1,0 +1,5 @@
+X_train = pickle.load( open( "X_train.txt", "r" ) )
+X_test = pickle.load( open( "X_test.txt", "r" ) )
+bdt = RandomForestClassifier(n_estimators = 200)
+bdt.fit(X_train, Y_train)
+#bdt.decision_function(X_test)
